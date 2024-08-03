@@ -32,7 +32,7 @@ include "inc/config.php";
   <link rel="icon" type="image/png" sizes="512x512" href="assets/img/512.png">
   <link href="assets/img/logo-600-400.png" rel="image_src">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/custom.min.css?202408022139">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
@@ -89,7 +89,20 @@ include "inc/config.php";
   </section>
   <div class="text-center text-white copyright py-4">
     <div class="container"><small>
-        <p><i class="fa fa-copyright" aria-hidden="true"></i> <?= date("Y") > 2024 ? "2024-" . date("Y") . " " : "2024 " ?> <?= $copyright ?> </p><p class="mb-0">Desenvolvido por <a class="jmultimidia" target="_blank" href="https://www.jmultimidia.com.br"><img alt="JMultimídia - Applications Web &amp; Mobile" src="assets/img/jmultimidia-footer-white.svg"></a></p>
+      <p class="mb-1"><i class="fa fa-copyright" aria-hidden="true"></i> <?= date("Y") > 2024 ? "2024-" . date("Y") . " " : "2024 " ?> <?= $copyright ?>
+      <?php if ($email) { ?>
+      <br><a class="mail" href="mailto:<?= $email ?>"><?= $email ?></a>
+      <?php } ?>
+      </p>
+      <?php if ($instagram) {?>
+      <div class="d-flex justify-content-center align-items-center" style="height: 40px;">
+        <a class="instagram d-flex align-items-center text-decoration-none" href="https://www.instagram.com/<?= $instagram ?>" target="_blank">
+          <i class="fa fa-instagram me-2"></i>
+          <span class="d-inline-block">Siga no Instagram</span>
+        </a>
+      </div>
+      <?php } ?>
+      <p class="mb-0">Desenvolvido por <a class="jmultimidia" target="_blank" href="https://www.jmultimidia.com.br"><img alt="JMultimídia - Applications Web &amp; Mobile" src="assets/img/jmultimidia-footer-white.svg"></a></p>
       </small></div>
   </div>
   <a href="https://api.whatsapp.com/send?phone=55<?= limpaCelular($whatsapp) ?>&text=Olá <?= $copyright ?>," class="btn-whatsapp-pulse"><i class="fa fa-whatsapp"></i></a>

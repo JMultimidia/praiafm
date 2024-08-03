@@ -67,6 +67,12 @@ background-image: linear-gradient(rgba(192, 192, 246, 0.25),rgba(177, 177, 245, 
 .footer a:hover{
   color: #4e3816;
 }
+a.mail, a.instagram {
+  color: #FFF
+}
+.instagram i {
+  font-size: 27px;
+}
 .btn-whatsapp-pulse {
   background: #25d366;
   color: #fff;
